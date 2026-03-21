@@ -1,13 +1,11 @@
-const images = [
-  "images/image1.png",
-  "images/image2.jpeg",
-  "images/somename.png"
-];
-
+// Images are loaded from images-list.js (auto-generated)
+const images = imagesList;
 let currentIndex = 0;
 const slide = document.getElementById("slide");
 
 function showNextSlide() {
+  if (images.length === 0) return;
+  
   // Fade out
   slide.style.opacity = 0;
   
@@ -19,5 +17,8 @@ function showNextSlide() {
   }, 500);
 }
 
-// Change every 4 seconds
-setInterval(showNextSlide, 4000);
+// Initialize first image and start slideshow
+if (images.length > 0) {
+  slide.src = images[0];
+  setInterval(showNextSlide, 10000);
+}
