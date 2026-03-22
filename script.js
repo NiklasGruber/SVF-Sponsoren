@@ -20,5 +20,5 @@ function showNextSlide() {
 // Initialize first image and start slideshow
 if (images.length > 0) {
   slide.src = images[0];
-  setInterval(showNextSlide, 10000);
+  setInterval(showNextSlide, 5000);
 }
